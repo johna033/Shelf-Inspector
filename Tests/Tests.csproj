@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D10FCA0-9BD4-4837-BA97-63DBF39A5FC5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.4.10.1939, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI\Perceptrons\GenerateAsciiTests.cs" />
+    <Compile Include="AI\Perceptrons\PerceptronAsciiTest.cs" />
+    <Compile Include="Img\AdaptiveThresholdingTest.cs" />
+    <Compile Include="Img\Api\ApplyTransformTest.cs" />
+    <Compile Include="Img\Api\UtilsTest.cs" />
+    <Compile Include="Img\CannyEdgeTest.cs" />
+    <Compile Include="Img\CensusTransformTest.cs" />
+    <Compile Include="Img\DftTest.cs" />
+    <Compile Include="Img\DifferenceOfGaussiansTest.cs" />
+    <Compile Include="Img\DistanceTransformTest.cs" />
+    <Compile Include="Img\GaborFilterTest.cs" />
+    <Compile Include="Img\GaussianBlurTest.cs" />
+    <Compile Include="Img\HarrisCornerStrengthTest.cs" />
+    <Compile Include="Img\HistogramEqualizationTest.cs" />
+    <Compile Include="Img\HoughCirclesTest.cs" />
+    <Compile Include="Img\HoughLinesTest.cs" />
+    <Compile Include="Img\IntegralImageTest.cs" />
+    <Compile Include="Img\LaplacianEdgeDetectionTest.cs" />
+    <Compile Include="Img\LogTest.cs" />
+    <Compile Include="Img\MedianBlurTest.cs" />
+    <Compile Include="Img\MorphologicalDilateTest.cs" />
+    <Compile Include="Img\MorphologyErosionTest.cs" />
+    <Compile Include="Img\NormalizeTest.cs" />
+    <Compile Include="Img\RunAllTests.cs" />
+    <Compile Include="Img\SobelOperatorTest.cs" />
+    <Compile Include="Img\SquareRootTest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statistics\SystemRandomTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shelf Inspector-SharedComponents\ShelfInspectorDataModel.csproj">
+      <Project>{8ee8b5a0-c1d2-4f96-8b3b-059890b3e623}</Project>
+      <Name>ShelfInspectorDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShelfInspectorAI\ShelfInspectorAI.csproj">
+      <Project>{027461f1-e020-439a-bcd7-7baca04abcfc}</Project>
+      <Name>ShelfInspectorAI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShelfInspectorImg\ShelfInspectorImg.csproj">
+      <Project>{0b3830c8-621e-405b-9f47-49ce90052505}</Project>
+      <Name>ShelfInspectorImg</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="dll\x64\cudart64_65.dll" />
+    <Content Include="dll\x64\cufft64_65.dll" />
+    <Content Include="dll\x64\cvextern.dll" />
+    <Content Include="dll\x64\nppc64_65.dll" />
+    <Content Include="dll\x64\nppi64_65.dll" />
+    <Content Include="dll\x64\npps64_65.dll" />
+    <Content Include="dll\x64\OpenCL.dll" />
+    <Content Include="dll\x64\opencv_calib3d2410.dll" />
+    <Content Include="dll\x64\opencv_contrib2410.dll" />
+    <Content Include="dll\x64\opencv_core2410.dll" />
+    <Content Include="dll\x64\opencv_features2d2410.dll" />
+    <Content Include="dll\x64\opencv_flann2410.dll" />
+    <Content Include="dll\x64\opencv_gpu2410.dll" />
+    <Content Include="dll\x64\opencv_highgui2410.dll" />
+    <Content Include="dll\x64\opencv_imgproc2410.dll" />
+    <Content Include="dll\x64\opencv_legacy2410.dll" />
+    <Content Include="dll\x64\opencv_ml2410.dll" />
+    <Content Include="dll\x64\opencv_nonfree2410.dll" />
+    <Content Include="dll\x64\opencv_objdetect2410.dll" />
+    <Content Include="dll\x64\opencv_photo2410.dll" />
+    <Content Include="dll\x64\opencv_stitching2410.dll" />
+    <Content Include="dll\x64\opencv_superres2410.dll" />
+    <Content Include="dll\x64\opencv_video2410.dll" />
+    <Content Include="dll\x64\opencv_videostab2410.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{027461F1-E020-439A-BCD7-7BACA04ABCFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShelfInspectorAI</RootNamespace>
+    <AssemblyName>ShelfInspectorAI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\GaProgressInfo.cs" />
+    <Compile Include="Api\IEvolutionDoneCallback.cs" />
+    <Compile Include="Api\IGaProgressReporter.cs" />
+    <Compile Include="Boosting\AbstractAdaboost.cs" />
+    <Compile Include="Boosting\Adaboost.cs" />
+    <Compile Include="GA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GA.Designer.cs">
+      <DependentUpon>GA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneticAlgorithm\AbstractGeneticAlgorithm.cs" />
+    <Compile Include="GeneticAlgorithm\EcoFeature.cs" />
+    <Compile Include="GeneticAlgorithm\EcoFeatureParameterContainer.cs" />
+    <Compile Include="GeneticAlgorithm\EcoGeneticAlgorithm.cs" />
+    <Compile Include="GeneticAlgorithm\EcoModel.cs" />
+    <Compile Include="GeneticAlgorithm\EcoModelElement.cs" />
+    <Compile Include="GeneticAlgorithm\EcoTransformation.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\AdaptiveThresholding\AdaptiveThresholdingAdaptiveThresholdingTypeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\AdaptiveThresholding\AdaptiveThresholdingBlockSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\AdaptiveThresholding\AdaptiveThresholdingParam1Distributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\AdaptiveThresholding\AdaptiveThresholdingThreholdValueDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\AdaptiveThresholding\AdaptiveThresholdingThresholdTypeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\CannyEdge\CannyEdgeThresholdDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Census\CensusWindowSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\ChromosomeLength\ChromosomeLengthDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\DFT\DftNonZeroRowsDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Distance\DistanceDistanceTypeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Distance\DistanceMaskSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Distance\DistanceThresholdDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\DistributedValuesFactory.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\DoG\DogKernelSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Gabor\GaborGammaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Gabor\GaborKernelSizeDistributorcs.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Gabor\GaborLambdaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Gabor\GaborPsiDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Gabor\GaborSigmaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Gabor\GaborThetaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\GaussianBlur\GaussianBlurKernelSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\GaussianBlur\GaussianBlurSigmaXDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\GaussianBlur\GaussianBlurSigmaYDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HarrisCornerStrength\HarrisCornerStrengthApertureDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HarrisCornerStrength\HarrisCornerStrengthBlockSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HarrisCornerStrength\HarrisCornerStrengthKDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HoughCircles\HoughCirclesAccumulatorThresholdDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HoughCircles\HoughCirclesCannyThresholdDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HoughLines\HoughLinesMaxLineGapDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HoughLines\HoughLinesMinLineLengthDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\HoughLines\HoughLinesThresholdDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\IDistributedValue.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\IntegralImage\IntegralImageTypeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\LaplacianEdgeDetector\LaplacianEdgeDetectorApertureSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\MedianBlur\MedianBlurSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\MorphologicalDilate\MorphologicalDilateElementShapeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\MorphologicalDilate\MorphologicalDilateKernelSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\MorphologicalErosion\MorphologicalErosionElementShapeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\MorphologicalErosion\MorphologicalErosionKernelSizeDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Normalize\NormalizeAlphaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Normalize\NormalizeBetaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Sobel\SobelDeltaDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Sobel\SobelScaleDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Sobel\SobelXWeightDistributor.cs" />
+    <Compile Include="GeneticAlgorithm\ProbabilityDistributions\Sobel\SobelYWeightDistributor.cs" />
+    <Compile Include="NeuralNetworks\SinglePerceptronFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shelf Inspector-SharedComponents\ShelfInspectorDataModel.csproj">
+      <Project>{8ee8b5a0-c1d2-4f96-8b3b-059890b3e623}</Project>
+      <Name>ShelfInspectorDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShelfInspectorImg\ShelfInspectorImg.csproj">
+      <Project>{0b3830c8-621e-405b-9f47-49ce90052505}</Project>
+      <Name>ShelfInspectorImg</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,4 @@
+*.vspx
+obj/
+bin/
+*.psess
